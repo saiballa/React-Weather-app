@@ -18,6 +18,7 @@ const Weather:React.FC=()=>{
 
     const fetchData = async ()=>{
         setLoading(true);
+        setError("");
         try {
             const response = await axiosInstance.get(`${endpoints.query}?q=${query}&appid=${apiKey}`);
             setCityData(response?.data)
